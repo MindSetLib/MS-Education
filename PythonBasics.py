@@ -389,7 +389,7 @@ test_loss, test_acc = model.evaluate(test_images, test_labels)
 print(test_acc)
 
 
-#-------------------------------------------------------------
+#-----------------------------------------------------------
 # connect to audio device
 
 import speech_recognition as sr
