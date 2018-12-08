@@ -1,4 +1,4 @@
-﻿## tested
+﻿## tested to library
 # -*- coding: utf-8 -*-
 # For ML for managers course
 #-----------------------------------------------------------
