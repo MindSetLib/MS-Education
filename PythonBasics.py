@@ -1,4 +1,5 @@
-﻿# -*- coding: utf-8 -*-
+﻿## tested
+# -*- coding: utf-8 -*-
 # For ML for managers course
 #-----------------------------------------------------------
 # General
@@ -334,7 +335,7 @@ def ModelDemo_MSLib(model):
     print("gini:",2*roc_auc_score(y_test, model.predict(X_test))-1)
     print ("accuracy:",accuracy_score(y_test, model.predict(X_test)))
 
-##
+
 #----------------------------------------------------------------
 #Simple NN Keras
 import keras
