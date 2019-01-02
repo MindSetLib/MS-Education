@@ -10,6 +10,79 @@ Created on Thu Oct 11 18:31:24 2018
 """
 
 #---------------------------------------------------------
+#Data types
+#Типы данных
+
+#tuples -  неизменяемые, подходят для ключей
+()
+(1,)
+(1,2,3,4,5)
+
+#dictionaries
+x={1:"one", 2:"two"}
+
+#set
+x=set([1,2,3,4,5])
+
+#list
+
+[]
+[1]
+[1,2,3,4]
+
+
+#---------------------------------------------------------
+#Простейшие конструкции
+
+x=10
+if x<10:
+    y=1
+    z=5
+elif x=10:
+    x=1
+    z=4
+else:
+    y=6
+    z=1
+
+#-------------
+while x>y:
+    u=u+y
+    x=x-y
+
+#-------------
+
+for x in item_list:
+    ...
+
+
+#---------------------------------------------------------
+#создание собственного модуля
+import importlib as imp
+imp.reload(module)
+
+#---------------------------------------------------------
+#создание класса - ООП
+class Person:
+    def __init__(self, name, job=None, pay=0):
+        self.name = name
+        self.job = job
+        self.pay = pay
+    def lastName(self):
+        return self.name.split()[-1]
+    def giveRaise(self, percent):
+        self.pay = int(self.pay * (1 + percent))
+    def __str__(self):
+        return '[Person: %s, %s]' % (self.name, self.pay)
+
+class Manager(Person):
+    def __init__(self, name, pay):
+        Person.__init__(self, name, 'mgr', pay)
+    def giveRaise(self, percent, bonus=100):
+        Person.giveRaise(self, percent + bonus)
+
+
+#---------------------------------------------------------
 # Проверка версий ключевых библиотек
 # Подготовительный этап
 
@@ -403,3 +476,13 @@ with sr.Microphone() as source:
 
 question = r.recognize_google(audio, language="ru-RU")
 print(question)
+
+
+#-----------------------------------------------------------
+#Simple flask application
+from flask import Flask
+app = Flask(__name__)
+
+@app.route("/")
+def hello():
+    return "Hello World!"
