@@ -268,13 +268,84 @@ data_K1 = [x.upper() for x in data['K1'] if not pd.isnull(x)]
 
 #Matplotlib connect - work in notebook
 from matplotlib import pyplot as plt
+ # если используем Анаконду
 %matplotlib inline
+
+# построение графика
+
+fig = plt.figure()  # создадим график
+fig.suptitle('No axes on this figure')  # добавление названия графику
+
+fig, ax_lst = plt.subplots(2, 2)  # создаем сетку 2x2 из подграфиков
+
+# matplotlib работает только с массивами Numpy, следует перевести датафреймы пандас в массивы numpy
+
+a = pd.DataFrame(np.random.rand(4,5), columns = list('abcde'))
+a_asndarray = a.values
+
+# построим последовательно простейший график трех функций
+plt.plot (x,x, label="linear") # добавим линейную функцию
+plt.plot (x,x*x, label="quadratic") # добавим квадратичную функцию
+plt.plot (x,x*x*x, label="qubic") # добавим кубическую функцию
+plt.xlabel('x label')# добавим название оси x
+plt.ylabel('y label') # добавим название оси y
+plt.title('Different functions') # Добавим название графика
+plt.legend() # Добавим название легенды
+plt.show() # отобразим все добавленное
+
+#----------------
+# зададим стили
+
+import matplotlib.style as mplstyle
+mplstyle.use(['dark_background', 'ggplot', 'fast'])
+
+
+
+#----------------
+def Graph_plotter(ax, data1, data2, param_dict):
+    """
+    A helper function to make a graph
+
+    Parameters
+    ----------
+    ax : Axes
+        The axes to draw to
+
+    data1 : array
+       The x data
+
+    data2 : array
+       The y data
+
+    param_dict : dict
+       Dictionary of kwargs to pass to ax.plot
+
+    Returns
+    -------
+    out : list
+        list of artists added
+    """
+    out = ax.plot(data1, data2, **param_dict)
+    return out
+
+# используем новую функцию
+
+data1=np.linspace(-5,5,100)
+data2=data1*data1
+data3=np.linspace(-20,20,100)
+data4=data3*data3
+
+fig, ax = plt.subplots(1, 1)
+Graph_plotter(ax, data1, data2, {'marker': 'x','label':'test graphic'})
+
+
 
 # обзорная матрица
 
 pd.plotting.scatter_matrix(dataframe, c=y_train, figsize=(15, 15),
                            marker='o', hist_kwds={'bins': 20}, s=60,
                            alpha=.8, stratify=0.5) #, cmap=mglearn.cm3
+
 
 
 
