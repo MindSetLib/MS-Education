@@ -271,18 +271,19 @@ from matplotlib import pyplot as plt
  # если используем Анаконду
 %matplotlib inline
 
+#-------------
 # построение графика
 
 fig = plt.figure()  # создадим график
 fig.suptitle('No axes on this figure')  # добавление названия графику
 
 fig, ax_lst = plt.subplots(2, 2)  # создаем сетку 2x2 из подграфиков
-
+#-------------
 # matplotlib работает только с массивами Numpy, следует перевести датафреймы пандас в массивы numpy
 
 a = pd.DataFrame(np.random.rand(4,5), columns = list('abcde'))
 a_asndarray = a.values
-
+#-------------
 # построим последовательно простейший график трех функций
 plt.plot (x,x, label="linear") # добавим линейную функцию
 plt.plot (x,x*x, label="quadratic") # добавим квадратичную функцию
@@ -292,6 +293,29 @@ plt.ylabel('y label') # добавим название оси y
 plt.title('Different functions') # Добавим название графика
 plt.legend() # Добавим название легенды
 plt.show() # отобразим все добавленное
+#-------------
+# Мы можем использовать третью ось для отображения данных например о размере компаний или размере
+# выручки по месяцам
+
+data = {'a': np.arange(50),
+        'c': np.random.randint(0, 50, 50),
+        'd': np.random.randn(50)}
+data['b'] = data['a'] + 10 * np.random.randn(50)
+data['d'] = np.abs(data['d']) * 100
+
+plt.scatter('a', 'b', c='c', s='d', data=data)
+plt.xlabel('entry a')
+plt.ylabel('entry b')
+plt.show()
+
+# чтобы разнообразить выдачу графиков используйте кодировку символов
+# задаем диапазон от 0 до 5 с интервало 0.2
+t = np.arange(0., 5., 0.2)
+
+# красные звездочки синие квадратики и зеленые треугольники
+plt.plot(t, t, 'r*', t, t**2, 'bs', t, t**3, 'g^')
+plt.show()
+
 
 #----------------
 # зададим стили
@@ -330,14 +354,41 @@ def Graph_plotter(ax, data1, data2, param_dict):
 
 # используем новую функцию
 
-data1=np.linspace(-5,5,100)
+data1=np.linspace(-5,5,20)
 data2=data1*data1
-data3=np.linspace(-20,20,100)
+data3=np.linspace(-20,20,20)
 data4=data3*data3
+
 
 fig, ax = plt.subplots(1, 1)
 Graph_plotter(ax, data1, data2, {'marker': 'x','label':'test graphic'})
 
+
+# работаем с массивом графиков
+fig, ax = plt.subplots(2, 2)
+Graph_plotter(ax[0][0], data1, data2, {'marker': 'x'})
+Graph_plotter(ax[1][0], data3, data4, {'marker': 'o'})
+Graph_plotter(ax[0][1], data3, data4, {'marker': '*'})
+Graph_plotter(ax[1][1], data3, data4, {'marker': 's'})
+
+#----------------
+# возможны отображения точечных диаграм, баров и линий
+# важно отметить, что в эксель данную работу осуществлять намного проще, однако для проведения
+# исследовательского анализа данных матплотлиб бывает незаменим
+
+names = ['group_a', 'group_b', 'group_c']
+values = [1, 10, 100]
+
+plt.figure(1, figsize=(9, 3))
+
+plt.subplot(131)
+plt.bar(names, values)
+plt.subplot(132)
+plt.scatter(names, values)
+plt.subplot(133)
+plt.plot(names, values)
+
+plt.show()
 
 
 # обзорная матрица
@@ -627,3 +678,19 @@ app = Flask(__name__)
 @app.route("/")
 def hello():
     return "Hello World!"
+
+#-----------------------------------------------------------
+# Часто задаваемые вопросы
+*args
+**kwargs
+[:]
+[1:2:3]
+
+#знак вопроса для получения помощи?
+#табуляция для получения продолжения
+
+#все оси должны быть подписаны,
+# график иметь название
+# график должен иметь источник данных
+# должно быть понятно с первого раза
+# хорошая практика иметь данные для
