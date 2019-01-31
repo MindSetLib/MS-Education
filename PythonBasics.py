@@ -422,6 +422,38 @@ print("Maximum for each feature\n", X_train_scaled.max(axis=0))
 X_test_scaled = (X_test - min_on_training) / range_on_training
 
 #---------------------------------------------------------------
+# data preparation
+# missings - imputation
+
+age_array = dframe[dframe["Age"]!=np.nan]["Age"]
+dframe["Age"].replace(np.nan,age_array.mean())
+
+df = df.fillna(df.median())
+
+# для конкретной колонки
+df [“loc”] = df [“loc”].fillna(df [“loc”].median() )
+
+# для массива numpy
+age[ age==’ ‘] = np.median(age)
+
+df.fillna(df.mean(), inplace=True)
+
+# для временных рядов
+df.fillna(method='ffill', inplace=True)
+
+# sklearn imputation
+# Taking care of missing data
+from sklearn.preprocessing import Imputer
+imputer = Imputer(missing_values = 'NaN', strategy = 'mean', axis = 0)
+imputer = imputer.fit(X[:, 1:3])
+X[:, 1:3] = imputer.transform(X[:, 1:3])
+
+# drop different values
+df.drop(columns=['B', 'C'])
+
+
+
+#---------------------------------------------------------------
 # Categorical features encoding
 
 
@@ -685,12 +717,8 @@ def hello():
 **kwargs
 [:]
 [1:2:3]
+with...
 
 #знак вопроса для получения помощи?
 #табуляция для получения продолжения
 
-#все оси должны быть подписаны,
-# график иметь название
-# график должен иметь источник данных
-# должно быть понятно с первого раза
-# хорошая практика иметь данные для
