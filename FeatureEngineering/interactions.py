@@ -44,7 +44,7 @@ PowerTransformer(copy=True, method='yeo-johnson', standardize=True)
 ...      [ 4.,  1., -2.]]
 >>> transformer = RobustScaler().fit(X)
 >>> transformer
-RobustScaler(copy=True, quantile_range=(25.0, 75.0), with_centering=True,
+RobustScaler(copy=True, quantile_range=(25.0, 75.0), with_centering=True)
        with_scaling=True)
 >>> transformer.transform(X)
 array([[ 0. , -2. ,  0. ],
