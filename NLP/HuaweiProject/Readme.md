@@ -31,7 +31,11 @@ please provide provision responsibilities for all people.
 
 e) How are you going to solve the described problem? 
 What are the differences from the baselines you are 
-comparing with. Please do include a link to a 
+comparing with. 
+
+Please do include a link to a 
 repository where you are going to keep solution's 
 code and data in case you are collecting the dataset.
+
+* https://github.com/MindSetLib/MS-Education/tree/master/NLP/HuaweiProject
 
