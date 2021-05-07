@@ -47,7 +47,11 @@ Natural language processing
 
 ## Practice 2.
 * Cловари
-* Функции и классы
+* Функции и классы, __init__, self, 
+* множества, словари, функции, ламбды, модули, классы, принципы ООП, принципы SOLID
+
+
+## Practice 3.
 * Подключение к базе данных
 * Pandas
 * Загрузка данных из файла
@@ -60,29 +64,31 @@ Natural language processing
 * Базовые элементы визуализации
 
 
-## Practice 3.
+## Practice 
 * Numpy
 * Перевод массивов dataframe в Numpy
 * Работа с формой массивов
 * Работа с индексами
 * Работа матрицами, компонент linalg
+* np.concatenate, np.random.randn, np.exp, np.dot, np.newaxis, np.zeros_like, np.hstack, np.ones, shape, np.log, np.meshgrid, np.linspace, np.min, np.max, ravel
 * Оптимизация
 
-## Practice 4.
+## Practice 
 * Визуализация с matplotlib
+* plt.figure, plt.plot, plt.scatter, plt.legend, plt.show, plt.pcolormesh
 * Визуализация с seaborn
 
-## Practice 4.
+## Practice 
 * Расчет базовых статистик в scipy
 * Линейная регрессия на данных компании (страховая сумма и тяжесть дтп)
 
-## Practice 5.
+## Practice 
 * Логистическая регрессия на данных компании (возраст страхователя и совметсная покупка осаго и каско или имущества)
 
-## Practice 6.
+## Practice 
 * Повтор линейной и логистической регрессий на sklearn
 
-## Practice 7.
+## Practice 
 * Feature engineering
 * Ключевые подходы к генерации признаков в бизнесе
 * Базовые принципы векторизации признаков, one hot encoding, interactions
@@ -93,7 +99,7 @@ Natural language processing
 * Ролик 7 – Нестандартные фичи – кластеризация, расстояния
 
 
-## Practice 8.
+## Practice 
 * Тщательный отбор признаков
 * Регуляризация 
 * Методы снижения размерности
@@ -141,6 +147,9 @@ Natural language processing
 * Генерация признаков совместно с геопозцией
 * Использование геопризнаков в задаче борьбы с мошенничеством
 * Использование геопризнаков в задаче увеличения кросс продаж
+
+# Practice
+* Задача численной оптимизации в python
 
 # Practice
 * Внедрение моделей
