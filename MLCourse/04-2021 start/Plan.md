@@ -62,9 +62,13 @@ Natural language processing
 * Разделение данных, обработка и слияние данных
 * Базовая функциональность, описательные статистики
 * Базовые элементы визуализации
+* Логическая индексация
 
 
-## Practice 
+
+## Practice 4
+* Подключение к базе данных
+* 
 * Numpy
 * Перевод массивов dataframe в Numpy
 * Работа с формой массивов
@@ -72,6 +76,33 @@ Natural language processing
 * Работа матрицами, компонент linalg
 * np.concatenate, np.random.randn, np.exp, np.dot, np.newaxis, np.zeros_like, np.hstack, np.ones, shape, np.log, np.meshgrid, np.linspace, np.min, np.max, ravel
 * Оптимизация
+np.arange, 
+сравнение скоростей
+L = range(1000)
+%timeit [i**2 for i in L]
+a = np.arange(1000)
+%timeit a**2
+np.lookfor('create array') 
+type(np.int()), type(np.int32()), type(np.int64())
+a.ndim, .shape, np.astype
+np.random.choice
+a.shape, a.ndim, a.size, a.dtype, a.itemsize,
+сравнение np.array([1, 1, 0, 2]) == np.array([1, 1, 0, 2])
+Маскирование, np.linspace, np.logspace, np.ones, np.zeros, np.zero_like, np.full, np.empty,  np.random.random, .ravel(), a.reshape((3,4)), 
+индексация, маскирование, арифметические операции, произведение dot и @, скалярное произведение, 
+np.put, np.where, np.sort, np.argsort, np.newaxis
+------------------------------
+np.log, np.exp, np.round(x, n), a.mean(..axis=0), a.median(), np.min(), np.max()
+#многомерные массивы
+np.clip, np.tile, np.concatenate, np.meshgrid
+* Перевод массивов dataframe в Numpy * Работа с формой массивов * Работа с индексами * Работа матрицами, компонент linalg
+np.add(A,B,out=B)
+np.divide(A,2,out=A)
+np.negative(A,out=A)
+np.multiply(A,B,out=A)
+np.where, hstack, vstack np.argmax(a)
+broadcasting
+
 
 ## Practice 
 * Визуализация с matplotlib
