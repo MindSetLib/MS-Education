@@ -1,4 +1,9 @@
-# MS-Education
-Usefull python code usage
+# Mind Set
 
-Репозиторий по курсу Machine learning basics
+Теоритические обзоры и практическое применения Python в задачах ML и DL.
+Бибилиотека собрана комьюнити [mset.space](mset.space).
+
+Наш YouTube: https://www.youtube.com/channel/UCFlhaDev_ikHvGJBOZxz0iQ
+
+
+
