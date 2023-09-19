@@ -1,0 +1,36 @@
+[tool.poetry]
+name = "nlp"
+version = "0.1.0"
+description = ""
+authors = ["mset"]
+readme = "README.md"
+
+[tool.poetry.dependencies]
+python = "^3.9"
+torch = "1.13.1"
+torchdata = "0.5.1"
+transformers = "4.27.2"
+datasets = "2.11.0"
+evaluate = "0.4.0"
+rouge-score = "0.1.2"
+peft = "0.3.0"
+loralib = "0.1.1"
+numpy = "^1.25.1"
+pandas = "^2.0.3"
+tqdm = "^4.65.0"
+trl = "^0.4.6"
+sentencepiece = "^0.1.99"
+protobuf = "3.20.0"
+wandb = "^0.15.5"
+nltk = "^3.8.1"
+scikit-learn = "^1.3.0"
+matplotlib = "^3.7.2"
+jinja2 = "^3.1.2"
+
+
+[tool.poetry.group.dev.dependencies]
+ipykernel = "^6.24.0"
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
