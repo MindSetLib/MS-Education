@@ -18,7 +18,7 @@ ipython kernel install --user --name nlp --display-name="nlp"
 
 ### Демонстрационный ноутбук
 
-[mset.space - LLM_ft.ipynb](./notebooks/mset.space - LLM_ft.ipynb)
+[mset.space - LLM_ft.ipynb](./notebooks/mset.space-LLM_ft.ipynb)
 
 ### Скрипты для различных этапов
 
