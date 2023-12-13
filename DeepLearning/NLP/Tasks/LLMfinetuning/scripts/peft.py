@@ -47,15 +47,6 @@ def tokenize_function(example):
 tokenized_datasets = dataset.map(tokenize_function, batched=True)
 tokenized_datasets = tokenized_datasets.remove_columns(['title', 'date', 'url', 'text', 'summary',])
 
-print(f"Shapes of the datasets:")
-print(f"Training: {tokenized_datasets['train'].shape}")
-print(f"Validation: {tokenized_datasets['validation'].shape}")
-print(f"Test: {tokenized_datasets['test'].shape}")
-
-print(tokenized_datasets)
-
-
-
 
 lora_config = LoraConfig(
     r=32, # Rank
@@ -73,7 +64,7 @@ output_dir = f'../reports/peft-2-training-{str(int(time.time()))}'
 peft_training_args = TrainingArguments(
     output_dir=output_dir,
     auto_find_batch_size=True,
-    learning_rate=1e-4, # 1e-3 Higher learning rate than full fine-tuning.
+    learning_rate=1e-4, 
     num_train_epochs=10,
     logging_steps=1000,
     save_steps=5000,

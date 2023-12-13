@@ -103,20 +103,6 @@ def evaluate_toxicity(model,
                       dataset, 
                       num_samples):
     
-    """
-     Parameters:
-    - model (trl model): Model to be evaluated.
-    - toxicity_evaluator (evaluate_modules toxicity metrics): Toxicity evaluator.
-    - tokenizer (transformers tokenizer): Tokenizer to be used.
-    - dataset (dataset): Input dataset for the evaluation.
-    - num_samples (int): Maximum number of samples for the evaluation.
-        
-    Returns:
-    tuple: A tuple containing two numpy.float64 values:
-    - mean (numpy.float64): Mean of the samples toxicity.
-    - std (numpy.float64): Standard deviation of the samples toxicity.
-    """
-
     toxicities = []
     input_texts = []
     for i, sample in tqdm(enumerate(dataset)):
