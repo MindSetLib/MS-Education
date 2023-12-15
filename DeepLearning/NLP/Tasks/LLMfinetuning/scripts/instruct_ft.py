@@ -24,7 +24,9 @@ os.environ['HF_HOME'] = '/home/jovyan/work/ramdisk/shlyahin/HF_cache/'
 os.environ["CUDA_DEVICE_ORDER"]="PCI_BUS_ID"
 os.environ["CUDA_VISIBLE_DEVICES"]="2"
 
-huggingface_dataset_name = 'IlyaGusev/gazeta' #"UrukHan/t5-russian-spell_I"
+
+huggingface_dataset_name = 'IlyaGusev/gazeta' 
+
 dataset = load_dataset(huggingface_dataset_name)
 
 
@@ -64,12 +66,7 @@ for i, model_name in enumerate(models):
     tokenized_datasets = dataset.map(tokenize_function, batched=True)
     tokenized_datasets = tokenized_datasets.remove_columns(['title', 'date', 'url', 'text', 'summary',])
 
-    print(f"Shapes of the datasets:")
-    print(f"Training: {tokenized_datasets['train'].shape}")
-    print(f"Validation: {tokenized_datasets['validation'].shape}")
-    print(f"Test: {tokenized_datasets['test'].shape}")
 
-    print(tokenized_datasets)
 
     output_dir = f'../reports/ift-2-training-{str(int(time.time()))}'
 
