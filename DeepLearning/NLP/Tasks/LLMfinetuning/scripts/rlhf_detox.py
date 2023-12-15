@@ -103,6 +103,7 @@ def evaluate_toxicity(model,
                       dataset, 
                       num_samples):
     
+
     toxicities = []
     input_texts = []
     for i, sample in tqdm(enumerate(dataset)):

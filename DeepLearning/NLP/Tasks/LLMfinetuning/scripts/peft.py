@@ -64,7 +64,9 @@ output_dir = f'../reports/peft-2-training-{str(int(time.time()))}'
 peft_training_args = TrainingArguments(
     output_dir=output_dir,
     auto_find_batch_size=True,
+
     learning_rate=1e-4, 
+
     num_train_epochs=10,
     logging_steps=1000,
     save_steps=5000,
