@@ -2,7 +2,7 @@ torch==2.0.1
 torchvision==0.15.2
 torchaudio==2.0.2
 Cython
-nemo_toolkit['all']
+nemo_toolkit[all]
 TeraTTS
 accelerate==0.21.0
 bitsandbytes==0.40.2
